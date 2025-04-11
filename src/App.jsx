@@ -4,7 +4,11 @@ import './App.css'
 
 export const App = () => {
 
+  // Aquí se define en donde se almacenará la lista de productos y como se inicializará
+
   const [products, setProducts] = useState([]);
+
+  // Aquí se usó useEffect para hacer una carga de datos, en este caso se simula una conexión a API
 
   useEffect(() => {
     setTimeout(() => {
@@ -102,6 +106,7 @@ export const App = () => {
         <img src = "./src/assets/shopping-car.png" alt="shopping-car" className='shopping-car'/>
       </div>
       <div className='content'>
+        {/* Aquí se usa map para crear los productos que esten en la lista con el diseño establecido */}
         {products?.map(product => (
           <div key={product.id} className='product'>
             <div className='image-container'>
